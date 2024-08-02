@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Dr. Ganesh Patil</title>
+    <link rel="stylesheet" href="doctorincss.css">
+    <style>
+        /* Add the same CSS here or link to a separate CSS file */
+    </style>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            var form = document.getElementById('contact-form');
+            var name = form.querySelector('input[name="name"]').value;
+            var email = form.querySelector('input[name="email"]').value;
+            var message = form.querySelector('textarea[name="message"]').value;
+
+            if (name && email && message) {
+                alert('Message sent to  Dr. Ganesh Patil successfully!');
+                form.reset();
+            } else {
+                alert('Please fill out all fields.');
+            }
+        }
+    </script>
+</head>
+<body style="background-color: #e4f9f4;">
+    <header>
+        <h1>Health for Future</h1>
+    </header>
+    <div class="container">
+        <div class="section">
+            <p><b>Dr. Ganesh Patil</b><br>
+                Nutrition and Sustainability Expert<br>
+                
+                <br> Dr. Ganesh Patil is an emerging expert in the field of nutrition and sustainability, with 3 years of dedicated experience. He focuses on promoting healthy dietary habits and sustainable living practices. Dr. Patil's commitment to combining health and environmental consciousness makes him a valuable guide for individuals looking to improve their well-being while also making environmentally responsible choices.</p>
+                <br> <div class="contact-form">
+                <form id="contact-form" onsubmit="submitForm(event)">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 Health for Future</p>
+    </footer>
+</body>
+</html>

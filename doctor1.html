@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Dr. Atul Deshmukh</title>
+    <link rel="stylesheet" href="doctorincss.css">
+    <style>
+        /* Add the same CSS here or link to a separate CSS file */
+    </style>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            var form = document.getElementById('contact-form');
+            var name = form.querySelector('input[name="name"]').value;
+            var email = form.querySelector('input[name="email"]').value;
+            var message = form.querySelector('textarea[name="message"]').value;
+
+            if (name && email && message) {
+                alert('Message sent to Dr. Atul Deshmukh successfully!');
+                form.reset();
+            } else {
+                alert('Please fill out all fields.');
+            }
+        }
+    </script>
+</head>
+<body style="background-color: #e4f9f4;">
+    <header>
+        <h1>Health for Future</h1>
+    </header>
+    <div class="container">
+        <div class="section">
+            <p><b>Dr. Atul Deshmukh</b><br>
+                Nutrition and Sustainability Expert<br><br>
+                Dr. Atul Deshmukh is a seasoned expert in the field of nutrition and sustainability, with an impressive 7 years of experience. He has dedicated his career to promoting healthy eating habits and sustainable living practices. Dr. Deshmukh's extensive knowledge and practical approach make him a valuable resource for individuals seeking to improve their health while also considering the impact of their choices on the environment.</p>
+            <br><div class="contact-form">
+                <form id="contact-form" onsubmit="submitForm(event)">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div><br>
+    <footer>
+        <p>© 2024 Health for Future</p>
+    </footer>
+</body>
+</html>

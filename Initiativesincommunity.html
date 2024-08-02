@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Health Initiatives</title>
+    <link rel="shortcut icon" type="image/png" href="\imges\favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f9;
+            box-sizing: border-box;
+        }
+
+        header {
+            background: linear-gradient(to right, #007bff, #184778);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            background: linear-gradient(to right, #95e1d4, #00796b);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.2em;
+            line-height: 1.4;
+        }
+
+        #local-health-initiatives {
+            padding: 2rem 1rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        #local-health-initiatives .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #local-health-initiatives h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #184778;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        #local-health-initiatives p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .search-wrapper {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #search {
+            width: 100%;
+            padding: 0.75rem 2.75rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            color: #333;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #search::placeholder {
+            color: #aaa;
+            font-style: italic;
+        }
+
+        #search:focus {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            border: 2px solid #007bff;
+        }
+
+        .search-wrapper i {
+            position: absolute;
+            top: 50%;
+            left: 0.75rem;
+            transform: translateY(-50%);
+            color: #007bff;
+            font-size: 1.2rem;
+            pointer-events: none;
+        }
+
+        .initiatives-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .initiatives-list ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .initiatives-list li {
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+            background-color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .initiatives-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .initiatives-list a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1.1rem;
+            display: block;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .initiatives-list a:hover {
+            color: #0056b3;
+            background-color: #f1f1f1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 2rem;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            #local-health-initiatives h2 {
+                font-size: 2rem;
+            }
+
+            #local-health-initiatives p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            #search {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #e4f9f4;">
+    <header>
+        <div class="header-container">
+            <h1>Health For Future</h1>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="navbar-content">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="health-education.html">Health Education</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tools.html">Tools</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="community.html">Community</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="indexprofile.html">Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="local-health-initiatives">
+        <div class="container">
+            <h2>Local Health Initiatives</h2>
+            <p>Find and participate in local health and wellness projects.</p>
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search" placeholder="Search initiatives...">
+                </div>
+            </div>
+            <div class="initiatives-list">
+                <ul>
+                    <li><a href="communityFP.html">Community Fitness Programs</a></li>
+                    <li><a href="NeighborWW.html">Neighborhood Wellness Workshops</a></li>
+                    <li><a href="LocalHS.html">Local Health Screenings</a></li>
+                    <li><a href="MentalHSG.html">Mental Health Support Groups</a></li>
+                </ul>
+            </div>
+            <a href="#view-initiatives" class="btn">View Initiatives</a>
+        </div>
+    </section>
+
+    <footer style="
+    background-color: #343a40; 
+    color: #ffffff; 
+    padding: 20px; 
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+">
+    <div style="
+        display: flex; 
+        justify-content: space-between; 
+        align-items: flex-start; 
+        margin-bottom: 20px;
+    ">
+        <!-- Contact Information Section -->
+        <div style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+        ">
+            <div style="margin: 5px 0;">
+                <i class="fas fa-envelope" style="color: #ffffff;"></i> 
+                <a href="mailto:contact@healthforfuture.com" style="color: #ffffff; text-decoration: none; margin-left: 5px;">
+                    contact@healthforfuture.com
+                </a>
+            </div>
+            <div style="margin: 5px 0;">
+                <i class="fas fa-map-marker-alt" style="color: #ffffff;"></i> 
+                <span style="margin-left: 5px;">123 Wellness Avenue, Healthy City, HC 12345</span>
+            </div>
+            <div style="margin: 5px 0;">
+                <i class="fas fa-phone-alt" style="color: #ffffff;"></i> 
+                <span style="margin-left: 5px;">+1 (123) 456-7890</span>
+            </div>
+            <div style="margin: 5px 0;">
+                <i class="fas fa-heart" style="color: #ffffff;"></i> 
+                <span style="margin-left: 5px;">Dedicated to your health and well-being</span>
+            </div>
+        </div>
+        
+        <!-- Links and Social Media Section -->
+        <div style="
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        ">
+            <div style="margin-bottom: 10px;">
+                <p style="margin: 0;">
+                    Follow us:
+                    <a href="https://facebook.com/healthforfuture" target="_blank" style="color: #ffffff; margin-left: 10px;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/healthforfuture" target="_blank" style="color: #ffffff; margin-left: 10px;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/healthforfuture" target="_blank" style="color: #ffffff; margin-left: 10px;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/healthforfuture" target="_blank" style="color: #ffffff; margin-left: 10px;">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </p>
+            </div>
+            <div>
+                <ul style="
+                    list-style-type: disc; 
+                    padding: 0; 
+                    margin: 0;
+                    text-align: center;
+                ">
+                    <li style="margin: 5px 0;">
+                        <a href="#privacy-policy" style="color: #ffffff; text-decoration: none;">Privacy Policy</a>
+                    </li>
+                    <li style="margin: 5px 0;">
+                        <a href="#terms-of-service" style="color: #ffffff; text-decoration: none;">Terms of Service</a>
+                    </li>
+                    <li style="margin: 5px 0;">
+                        <a href="#cookie-policy" style="color: #ffffff; text-decoration: none;">Cookie Policy</a>
+                    </li>
+                    <li style="margin: 5px 0;">
+                        <a href="#accessibility" style="color: #ffffff; text-decoration: none;">Accessibility</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div style="
+        text-align: center; 
+        font-size: 15px; 
+        margin: 0;
+    ">
+        <p style="margin: 0;">
+            &copy; 2024 Health For Future. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+    <script>
+        document.getElementById('search').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const listItems = document.querySelectorAll('.initiatives-list li');
+
+            listItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

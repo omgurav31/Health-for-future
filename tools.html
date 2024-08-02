@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health For Future - Tools & Tracker</title>
+    <link rel="shortcut icon" type="image/png" href="\imges\favicon.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+</head>
+<body style="background-color: #e4f9f4;">
+    <header>
+        <div class="header-container">
+            <h1>Health For Future</h1>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="navbar-content">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="health-education.html">Health Education</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tools.html">Tools</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="community.html">Community</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="indexprofile.html">Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="tools" class="container my-4">
+            <h2 class="text-center mb-4" style="font-family: 'Roboto', sans-serif; font-size: 2.5rem; font-weight: bold; color: #333;">Tools</h2>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="card p-3 mb-4 shadow-sm" style="position: relative; overflow: hidden;">
+                        <div class="text-center" style="font-size: 3rem; margin-top: -1rem; margin-bottom: -2%; color: #1ea9e9;">
+                            <i class="fas fa-shoe-prints" style="transform: rotate(20deg);"></i>
+                        </div>
+                        <h3 class="card-title text-center mt-4">Step Tracker</h3>
+                        <div class="mb-3">
+                            <label for="steps-input" class="form-label">
+                                <i class="fas fa-walking" style="margin-right: 0.5rem; color: #FF5722;"></i>Enter your daily steps
+                            </label>
+                            <input type="number" class="form-control" id="steps-input" placeholder="Enter your daily steps">
+                        </div>
+                        <p id="steps-output" class="text-center"></p>
+                        <button class="btn btn-primary w-100" onclick="trackSteps()">Track</button>
+                    </div>
+                </div>
+            </div>
+        </section>  
+        
+        <section id="healthTracker" class="container my-4">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="card p-3 shadow-sm">
+                        <div class="mb-3">
+                            <div class="text-center mb-4" style="position: relative;">
+                                <div style="font-size: 3rem; color: #1ea9e9;">
+                                    <i class="fas fa-heartbeat" style="transform: scale(1.1);"></i>
+                                </div>
+                                <h2>Health Meter</h2>
+                            </div>
+                            <label for="age" class="form-label">
+                                <i class="fas fa-birthday-cake" style="margin-right: 0.5rem; color: #FFC107;"></i><b>Age:</b>
+                            </label>
+                            <input type="number" id="age" class="form-control" placeholder="Enter your age" min="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="height" class="form-label">
+                                <i class="fas fa-ruler-vertical" style="margin-right: 0.5rem; color: #3F51B5;"></i><b>Height (cm):</b>
+                            </label>
+                            <input type="number" id="height" class="form-control" placeholder="Enter your height in cm" min="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="weight" class="form-label">
+                                <i class="fas fa-weight" style="margin-right: 0.5rem; color: #9C27B0;"></i><b>Weight (kg):</b>
+                            </label>
+                            <input type="number" id="weight" class="form-control" placeholder="Enter your weight in kg" min="1" required>
+                        </div>
+                        <button class="btn btn-primary w-100" onclick="calculateHealth()">Calculate</button>
+                        <div id="health-results" class="mt-3 text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+    </main>
+    <footer style="
+    background-color: #343a40; 
+    color: #ffffff; 
+    padding: 20px; 
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+">
+    <div style="
+        display: flex; 
+        justify-content: space-between; 
+        align-items: flex-start; 
+        margin-bottom: 20px;
+    ">
+        <!-- Contact Information Section -->
+        <div style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+        ">
+            <div style="margin: 5px 0;">
+                <i class="fas fa-envelope" style="color: #ffffff;"></i> 
+                <a href="mailto:contact@healthforfuture.com" style="color: #ffffff; text-decoration: none; margin-left: 5px;">
+                    contact@healthforfuture.com
+                </a>
+            </div>
+            <div style="margin: 5px 0;">
+                <i class="fas fa-map-marker-alt" style="color: #ffffff;"></i> 
+                <span style="margin-left: 5px;">123 Wellness Avenue, Healthy City, HC 12345</span>
+            </div>
+            <div style="margin: 5px 0;">
+                <i class="fas fa-phone-alt" style="color: #ffffff;"></i> 
+                <span style="margin-left: 5px;">+1 (123) 456-7890</span>
+            </div>
+            <div style="margin: 5px 0;">
+                <i class="fas fa-heart" style="color: #ffffff;"></i> 
+                <span style="margin-left: 5px;">Dedicated to your health and well-being</span>
+            </div>
+        </div>
+        
+        <!-- Links and Social Media Section -->
+        <div style="
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        ">
+            <div style="margin-bottom: 10px;">
+                <p style="margin: 0;">
+                    Follow us:
+                    <a href="https://facebook.com/healthforfuture" target="_blank" style="color: #ffffff; margin-left: 10px;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/healthforfuture" target="_blank" style="color: #ffffff; margin-left: 10px;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/healthforfuture" target="_blank" style="color: #ffffff; margin-left: 10px;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/healthforfuture" target="_blank" style="color: #ffffff; margin-left: 10px;">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </p>
+            </div>
+            <div>
+                <ul style="
+                    list-style-type: disc; 
+                    padding: 0; 
+                    margin: 0;
+                    text-align: center;
+                ">
+                    <li style="margin: 5px 0;">
+                        <a href="#privacy-policy" style="color: #ffffff; text-decoration: none;">Privacy Policy</a>
+                    </li>
+                    <li style="margin: 5px 0;">
+                        <a href="#terms-of-service" style="color: #ffffff; text-decoration: none;">Terms of Service</a>
+                    </li>
+                    <li style="margin: 5px 0;">
+                        <a href="#cookie-policy" style="color: #ffffff; text-decoration: none;">Cookie Policy</a>
+                    </li>
+                    <li style="margin: 5px 0;">
+                        <a href="#accessibility" style="color: #ffffff; text-decoration: none;">Accessibility</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div style="
+        text-align: center; 
+        font-size: 15px; 
+        margin: 0;
+    ">
+        <p style="margin: 0;">
+            &copy; 2024 Health For Future. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to calculate calories burned
+        function calculateCalories(steps) {
+            // Average calories burned per step (0.04 calories)
+            const caloriesPerStep = 0.04;
+            const caloriesBurned = steps * caloriesPerStep;
+            return caloriesBurned.toFixed(2); // Return calories burned rounded to 2 decimal places
+        }
+
+        // Function to track steps and calculate calories
+        function trackSteps() {
+            var steps = document.getElementById('steps-input').value;
+            alert('You have entered: ' + steps + ' steps');
+        }
+            if (!isNaN(steps)) {
+                const caloriesBurned = calculateCalories(steps);
+                document.getElementById('steps-output').textContent = `Calories burned: ${caloriesBurned}`;
+            } else {
+                alert('Please enter a valid number of steps.');
+            }
+        
+
+        function calculateHealth() {
+            // Retrieve user input
+            const age = parseInt(document.getElementById('age').value);
+            const height = parseInt(document.getElementById('height').value);
+            const weight = parseInt(document.getElementById('weight').value);
+
+            // Validate input
+            if (isNaN(age) || isNaN(height) || isNaN(weight)) {
+                alert('Please enter valid numbers for age, height, and weight.');
+                return;
+            }
+
+            // Calculate BMI (Body Mass Index)
+            const heightMeters = height / 100;
+            const bmi = weight / (heightMeters * heightMeters);
+            const bmiCategory = getBMICategory(bmi);
+            const healthQuality = getHealthQuality(bmiCategory);
+
+            // Calculate BMR (Basal Metabolic Rate)
+            const bmr = calculateBMR(age, height, weight);
+
+            // Display results
+            const healthResults = document.getElementById('health-results');
+            healthResults.innerHTML = `
+                <p>BMI: ${bmi.toFixed(2)}</p>
+                <p>BMI Category: ${bmiCategory}</p>
+                <p>BMR: ${bmr.toFixed(2)} kcal/day</p>
+                <div id="health-meter">
+                    <p>Health Quality: ${healthQuality}</p>
+                    <div class="meter">
+                        <span style="width: ${calculateMeterWidth(bmiCategory)};"></span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getBMICategory(bmi) {
+            if (bmi < 18.5) {
+                return 'Underweight';
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                return 'Normal weight';
+            } else if (bmi >= 24.9 && bmi < 29.9) {
+                return 'Overweight';
+            } else {
+                return 'Obese';
+            }
+        }
+
+        function getHealthQuality(bmiCategory) {
+            switch (bmiCategory) {
+                case 'Underweight':
+                    return 'Poor';
+                case 'Normal weight':
+                    return 'Good';
+                case 'Overweight':
+                case 'Obese':
+                    return 'Needs Improvement';
+                default:
+                    return '';
+            }
+        }
+
+        function calculateMeterWidth(bmiCategory) {
+            switch (bmiCategory) {
+                case 'Underweight':
+                    return '20%'; // Poor health
+                case 'Normal weight':
+                    return '50%'; // Good health
+                case 'Overweight':
+                case 'Obese':
+                    return '80%'; // Needs improvement
+                default:
+                    return '0%'; // No health data
+            }
+        }
+
+        function calculateBMR(age, height, weight) {
+            // Mifflin-St Jeor Equation for BMR calculation (kcal/day)
+            let bmr;
+            if (age < 18) {
+                alert('BMR calculation is not suitable for individuals under 18 years.');
+                return 0;
+            } else if (age >= 18 && age <= 30) {
+                bmr = 15.3 * weight + 679;
+            } else if (age > 30 && age <= 60) {
+                bmr = 11.6 * weight + 879;
+            } else {
+                bmr = 8.7 * weight + 829;
+            }
+            return bmr;
+        }
+    </script>
+</body>
+</html>

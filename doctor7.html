@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Dr. Ajit Nandedkar</title>
+    <link rel="stylesheet" href="doctorincss.css">
+    <style>
+        /* Add the same CSS here or link to a separate CSS file */
+    </style>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            var form = document.getElementById('contact-form');
+            var name = form.querySelector('input[name="name"]').value;
+            var email = form.querySelector('input[name="email"]').value;
+            var message = form.querySelector('textarea[name="message"]').value;
+
+            if (name && email && message) {
+                alert('Message sent to Dr. Ajit Nandedkar successfully!');
+                form.reset();
+            } else {
+                alert('Please fill out all fields.');
+            }
+        }
+    </script>
+</head>
+<body style="background-color: #e4f9f4;">
+    <header>
+        <h1>Health for Future</h1>
+    </header>
+    <div class="container">
+        <div class="section">
+            <p><b>Dr. Ajit Nandedkar</b><br>
+                Mental Health Expert<br>
+                
+                <br>Dr. Ajit Nandedkar is a distinguished mental health expert with 9 years of experience in his career. He is internationally recognized and renowned for his contributions to the field of mental health. Dr. Nandedkar's expertise and dedication have made him a sought-after professional, known for his ability to provide exceptional care and support to his patients on a global scale.</p>
+                <br> <div class="contact-form">
+                <form id="contact-form" onsubmit="submitForm(event)">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 Health for Future</p>
+    </footer>
+</body>
+</html>
